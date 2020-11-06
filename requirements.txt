@@ -1,4 +1,4 @@
+pandas==1.0.1
 streamlit==0.69.2
 numpy==1.18.1
 pymongo==3.10.1
-pandas==1.0.1
