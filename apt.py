@@ -5,7 +5,6 @@ import numpy as np
 import pandas as pd
 from pymongo import MongoClient
 import base64
-import dnspython
 s = "bW9uZ29kYitzcnY6Ly9ndWVzdDpndWVzdEBsaXN0aW5ncy5ncnU0ci5tb25nb2RiLm5ldC9idXNpbmVzcz9yZXRyeVdyaXRlcz10cnVlJnc9bWFqb3JpdHk="
 client = MongoClient(base64.b64decode(s.encode('ascii')).decode('ascii'))
 db = client.business
