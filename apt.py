@@ -122,7 +122,7 @@ if view_apt.button("Find apartments!"):
 								bathrooms.append(listing['Bathrooms'])
 								costs.append(listing['Cost'])
 								utilities.append(listing['Utilities'])
-	view_apt.write(pd.DataFrame({
+	st.dataframe(pd.DataFrame({
 		'Leaser Name': leasers,
 		'Phone': phones,
 		'Email': emails,
@@ -134,4 +134,4 @@ if view_apt.button("Find apartments!"):
 		'Bathrooms': bathrooms,
 		'Cost': costs,
 		'Utilities': utilities
-		}))
+	}), 1000, 500)
