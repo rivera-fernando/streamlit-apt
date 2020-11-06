@@ -26,7 +26,7 @@ left, middle, right = add_apt.beta_columns(3)
 name = left.text_input('Name')
 phone = middle.text_input('Number')
 email = right.text_input('Email')
-password = add_apt.text_input('Secret Key (for deleting listings)', type='password')
+password = add_apt.text_input('Unique ID (for deleting listings)', type='password')
 add_apt.subheader('Apartment Information')
 left, right = add_apt.beta_columns([3, 1])
 address = left.text_input('Address')
@@ -65,7 +65,7 @@ if add_apt.button('Send information'):
 
 
 del_apt = st.beta_expander("Delete a Listing")
-passw = del_apt.text_input('Secret Key', type='password')
+passw = del_apt.text_input('Unique ID', type='password')
 if del_apt.button('Delete your listing'):
     result = db.listings.delete_many({"key": passw})
 
