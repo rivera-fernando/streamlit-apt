@@ -61,6 +61,7 @@ listing = {
 if add_apt.button('Send information'):
     obj = db.listings.insert_one(listing)
     st.success('Your listing has been added!')
+    left.empty()
 
 
 del_apt = st.beta_expander("Delete a Listing")
@@ -134,4 +135,4 @@ if view_apt.button("Find apartments!"):
 		'Bathrooms': bathrooms,
 		'Cost': costs,
 		'Utilities': utilities
-	}), 1000, 500)
+	}))
