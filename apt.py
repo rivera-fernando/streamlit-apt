@@ -8,7 +8,7 @@ import base64
 s = "bW9uZ29kYitzcnY6Ly9ndWVzdDpndWVzdEBsaXN0aW5ncy5ncnU0ci5tb25nb2RiLm5ldC9idXNpbmVzcz9yZXRyeVdyaXRlcz10cnVlJnc9bWFqb3JpdHk="
 client = MongoClient(base64.b64decode(s.encode('ascii')).decode('ascii'))
 db = client.business
-
+st.title('Swampy Sublease')
 st.sidebar.title('Hey there!')
 st.sidebar.header('Quick webpage info')
 explanation = st.sidebar.beta_expander("What's the point?", True)
@@ -16,7 +16,7 @@ explanation.write("Finding subleases is a pain. I didn't like looking through Fa
 how = st.sidebar.beta_expander("How does it work?", True)
 how.write("First decide what action you want to do; advertise your sublease, delete your sublease listing, or find an apartment. To add a listing, simply fill out the fields and press the button. To delete one, enter your secret key and again, press the button. To find an apartment, use the different input methods to set the key filtering information  and then simply click the button to display all the subleases that match your criteria. (Once you have the table, you can full-screen it and sort by clicking on any column heading.)")
 disc = st.sidebar.beta_expander("Disclaimer")
-disc.write("This website was made solely as a tool to facilitate subleasing for UF students. However, I cannot validate that everyone is who they claim to be nor can I verify that the listings are authentic. Be safe when you contact anyone from this website, and make sure that the listings are real before beginning any transactions.")
+disc.write("This website was made solely as a tool to facilitate subleasing for UF students. However, I cannot validate that everyone is who they claim to be nor can I verify that the listings are authentic. Be safe when you contact anyone from this website, and make sure that the listings are real before beginning any transactions. Your Unique ID will be visible in the database.")
 
 value = ''
 add_apt = st.beta_expander("Add a Listing")
