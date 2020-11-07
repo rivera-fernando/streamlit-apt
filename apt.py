@@ -66,11 +66,17 @@ if add_apt.button('Send information'):
 del_apt = st.beta_expander("Delete a Listing")
 passw = del_apt.text_input('Unique ID', type='password')
 if del_apt.button('Delete your listing'):
+    confirm = db.listings.find({"key": passw})
+    if confirm.count() != 0:
+        display = confirm[0]
+        display.pop('_id')
+        display.pop('key')
     result = db.listings.delete_many({"key": passw})
     if result.deleted_count == 0:
         st.error('No listing found with that ID')
     elif result.deleted_count == 1:
-        st.success('Your listing has been deleted!')
+        st.success('Your listing has been deleted! For reference, this is what it was.')
+        st.write(display)
     else:
         st.warning('More than one listing with that ID was found, all were deleted')
 
